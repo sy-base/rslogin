@@ -1,0 +1,5 @@
+* Change directory to rslogin-(version)
+* Run configure, example:
+	[user@host ~/rslogin-0.30.2]$ ./configure
+* Run make install, example:
+	[user@host ~/rslogin-0.30.2]$ make install

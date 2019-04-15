@@ -1,0 +1,66 @@
+### RSHOME: Specifies the full path to the rslogin home directory;
+### if you specify this here make sure you do not add a trailing slash.
+### 	Default: <User Home Directory>/.rslogin
+#RSHOME=/home/sybase/.rslogin
+
+### EXPECTBIN: Specifies the full path to your expect binary
+### 	Default: /usr/bin/expect
+#EXPECTBIN=/usr/bin/expect
+
+### RSPASS: Use this option only if you wish to override the default.
+### 	Default: rslogin.pass
+#RSPASS=rslogin.pass
+
+### VERBOSE_LOGIN: Show the login transcript
+### 1 = True, 0 = False
+###		Default: 1
+#VERBOSE_LOGIN=1
+
+### USE_AUTOROOT: Changes the default behavior of rslogin
+### to automatically login to a server and switch to root,
+### if you wish to login as a normal use with this option set
+### use the -R switch at run time. 1 = True, 0 = False
+###		Default: 0
+#USE_AUTOROOT=0
+
+### USE_AUTOPASS: Specifies whether you want rslogin to
+### automatically change your password for you when it expires.
+### This option also requires that you set USERPASS2 inside your
+### rslogin.pass file. 1 = True, 0 = False
+### 	Default: 0
+#USE_AUTOPASS=0
+
+### USE_PASSREVERT: Specifies whether you want rslogin to
+### automatically change your password back to the original (USERPASS)
+### when you login as root and it has previously been changed.
+### You cannot use this option if you don't use the AUTOPASS option above.
+### This option also requires that you set USERPASS2 inside your
+### rslogin.pass file. 1 = True, 0 = False
+### 	Default: 0
+#USE_PASSREVERT=0
+
+### USE_GPG: Specifies whether or not you are using a GPG Encrypted
+### PASS file. 1 = True, 0 = False
+### 	Default: 0
+#USE_GPG=0
+
+### GPGBIN: Specifies the full path to your GPG binary
+### (you may also specify paramaters to pass the binary here)
+### 	Default: /usr/bin/gpg
+#GPGBIN=/usr/bin/gpg
+
+### RSENCPASS: This options specifies the file that contains the
+### encrypted RSPASS file (used in conjuction with USEGPG=1), if
+### USEGPG=0 this option is ignored.
+### 	Default: <RSPASS>.gpg
+#RSENCPASS=rslogin.pass.gpg
+
+### SSHBIN: Specifies the full path to your ssh binary
+### (you may also specify custom options here)
+### 	Default: /usr/bin/slogin
+#SSHBIN=/usr/bin/slogin 
+
+### NAGROUP: The name of the HOSTGROUP that contains your Network
+### Appliance root password
+### 	Default: NETAPP
+#NAGROUP=NETAPP

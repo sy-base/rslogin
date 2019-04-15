@@ -1,0 +1,37 @@
+##### User configurable options #####
+CC          = @CXX@
+LIBS        = @LIBS@
+### End User configurable options ###
+CFLAGS  = @CFLAGS@
+EXECS = rslogin
+
+
+default: rslogin
+
+all: $(EXECS)
+
+rslogin: main.cpp
+	$(CC) main.cpp $(CFLAGS) -o rslogin $(LIBS)
+
+install: rslogin
+	-@echo "Installing rslogin binary"
+	-@if [ ! -d ${HOME}/bin ]; then mkdir ~/bin; fi
+	-@if [ ! -d ${HOME}/.rslogin ]; then mkdir ~/.rslogin; fi
+	-@cp -f rslogin ${HOME}/bin
+	-@echo "Copying rslogin user configuration templates"
+	-@cp -f conf/* ${HOME}/.rslogin/
+	-@echo "Installation complete."
+	-@echo -e "\n\n\n\n"
+	-@echo "########################### NOTICE ###############################"
+	-@echo "Configuration must be completed manually before rslogin can be"
+	-@echo "used. You must copy (or move) rslogin.cfg.default to rslogin.cfg"
+	-@echo "and rslogin.pass.default to rslogin.pass; then edit these files"
+	-@echo "accordingly. Comments are provided within the files to help you"
+	-@echo "configure rslogin properly."
+	-@echo -e "##################################################################\n\n"
+
+clean:
+	/bin/rm -f *.o $(EXECS)
+
+distclean: clean
+	/bin/rm -f config.h Makefile *.log config.status

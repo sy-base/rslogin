@@ -1,0 +1,62 @@
+##### This is Version: 0.32.5
+###################### Change Log #######################################
+Update (version 0.32.5) Dev-Release 11-16-07:
+	- BUGFIX-0014: Additional fix for remote linux systems during password change.
+	- BUGFIX-0013: Fixed issues with importing a root distribution with CRLF terminated lines
+	- BUGFIX-0012: Fixed issues with importing a root distribution with more than 4 equal signs before the root group name
+Update (version 0.32.4) Dev-Release 11-14-07:
+	- BUGFIX-0011: Solaris shows password during login, added sleep .1 to resolve
+	- BUGFIX-0010: Previous BUGFIX-0008 did not resolve the intended problem, reverted change
+Update (version 0.32.3) Dev-Release 11-14-07:
+	- BUGFIX-0009: Removed "%" as a valid user prompt during login, it caused issues on solaris.
+	- BUGFIX-0008: Turn off log_user during password send
+	- BUGFIX-0007: New versions of linux have a different change passwd prompt
+	- Feature: Added VERBOSE_LOGIN option that allows you to show/hide the entire login transcript
+Update (version 0.32.2) Dev-Release 11-13-07:
+	- Feature: New configuration option, USE_AUTOROOT added. When set to true the -r command line option is not required to login as root. However you can override this at runtime with -R and still login as a normal user.
+	- Feature: Import File Types. New command line option -t allows you to change the import file type. It defaults to VZHG which imports only HOSTGROUPS from the Verizon Security Root Distro file. Import file type VZ will import HOSTS and HOSTGROUPS.
+Update (version 0.32.1) Dev-Release 11-12-07:
+	- BUGFIX-0006: if ssh prompts you to add a host to known-hosts file, you would not be logged into the server properly.
+	- BUGFIX-0005: If you use -n, rslogin would incorrectly warn you of not finding a HOSTGROUP for the HOST.
+Update (version 0.32) Dev-Release 11-12-07:
+	- Feature: Added per-host userpass and userpass2 override
+	- BUGFIX-0004: Usage output rewritten to be a little more understanble
+Update (version 0.31) Dev-Release 11-09-07:
+	- Feature: Added automatic password changing upon expiration
+	- Feature: Added automatic password reversion
+Update (version 0.30.2) Dev-Release 11-08-07:
+	- BUGFIX-0003: Made additional source changes to fix issues running on SunOS
+	- Feature: Added configure script to generate Makefile
+Update (version 0.30.1) Dev-Release 11-07-07:
+	- BUGFIX-0002: Added support for SunOS home directory structure
+Update (version 0.30) Dev-Release 11-01-07:
+	- Feature: Added the ability to import VZ Security Root Distro file
+	- Feature: Added the ability to GPG Encrypt standard rslogin.pass file
+	- Feature: Added support for per user rslogin.cfg files
+	- BUGFIX-0001: Minor code cleanup and better source commenting
+ReWrite (version 0.25) Dev-Release 10-15-07:
+	- Previously rslogin was a combinaton of shell and expect. In 0.25 it has been rewritten in C++. Some features were not carried over. These include:
+		-Host user password override
+		-GPG Password Caching
+		-rslogin is currently a per-host installation 
+Update(v0.24) Release 11/09/05:
+     *Added compatibility with netapp logins.
+     *Added Usage statement
+Update(v0.23) 05/03/04:
+     *Added command to delete RSEXPECT file after execution
+     *Configuration file now contains configuration information
+     *rslogin.pass now the default password list file
+     *Modified permission to make files more secure
+     *Added gpg encryption of password list file
+     *Added password file "already decrypted" caching
+Update(v0.22) 04/26/04: 
+     *expect binary location now configurable via EXPECTBIN variable
+Update(v0.21) 04/26/04:
+     *SSH binary location now configurable via SSHBIN variable
+     *Dollar signs no longer have to be escaped
+     *Pound sign (#) is now treated as a comment in configuration file
+Update(v0.2) 01/22/04:
+     *Each host can now have a user password override in case that
+     particular host has a different user password from others in
+     the same root group.
+

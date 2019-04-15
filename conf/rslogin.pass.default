@@ -1,0 +1,21 @@
+### This is a commented line and will be skipped, blank lines will also
+### be skipped.
+USERLOGIN:juser
+USERPASS:the^password
+#USERPASS2:the^password^2
+##### Security Root Distro #######
+## Syntax for Hostgroups:
+## HOSTGROUP:<groupname>:<root password>
+HOSTGROUP:group1:PassWorD1
+HOSTGROUP:group2:pAsswORd2
+HOSTGROUP:netapp:netapp1
+############################################
+### Host to Hostgroup Associations
+### (preserved thru root distro imports)
+## Syntax for Hosts:
+## HOST:<hostname>:<hostgroup>:[userpass]:[userpass2]
+HOST:host1:group1
+HOST:host2:group1
+
+HOST:host3:group2
+HOST:host4:group3
